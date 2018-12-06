@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -42,7 +43,7 @@ public class Player : MonoBehaviour
         Vector3 tmp = GameObject.Find("Player").transform.position;
         if (r_generator.stepsmap[(int)tmp.x, (int)tmp.y] == 2)
         {
-            //うんこおおおお！！！！
+            SceneManager.LoadScene("Main");
         }
 
 
