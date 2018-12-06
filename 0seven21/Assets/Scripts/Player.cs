@@ -9,6 +9,9 @@ public class Player : MonoBehaviour
     DungeonGenerator generator;
     [SerializeField]
     SceneController scontroller;
+    [SerializeField]
+    RandomGenerator r_generator;
+
 
     int x = 0, y = 0, i = 0;
 
@@ -35,11 +38,17 @@ public class Player : MonoBehaviour
         {
             WallFrag(0, -1, 0);
         }
-    
-    
-     //   rigidbodyCache.AddForce(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * 10f);
 
-     }
+        Vector3 tmp = GameObject.Find("Player").transform.position;
+        if (r_generator.stepsmap[(int)tmp.x, (int)tmp.y] == 2)
+        {
+            //うんこおおおお！！！！
+        }
+
+
+        //   rigidbodyCache.AddForce(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * 10f);
+
+    }
 
     public void WallFrag(int x2,int y2,int z2)
     {
