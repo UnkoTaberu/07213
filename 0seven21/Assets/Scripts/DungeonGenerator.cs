@@ -47,11 +47,8 @@ public class DungeonGenerator : MonoBehaviour
             map = area.WriteToMap(map);
         }
 
-        // アイテムを配置
-        r_generator.ItemGenerate(map);
-
-        // 階段を配置
-        r_generator.StepsGenerate(map);
+        // アイテム、階段を配置
+        r_generator.SpGenerate(map);
 
         // プレイヤーを配置
         player.PlayerPut(map);

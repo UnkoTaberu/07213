@@ -41,9 +41,12 @@ public class Player : MonoBehaviour
         }
 
         Vector3 tmp = GameObject.Find("Player").transform.position;
-        if (r_generator.stepsmap[(int)tmp.x, (int)tmp.y] == 2)
+        if (r_generator.spmap[(int)tmp.x, (int)tmp.y] == 2) //階段の上に乗った時
         {
             SceneManager.LoadScene("Scene");
+        }else if(r_generator.spmap[(int)tmp.x, (int)tmp.y] == 3) //アイテムの上に乗った時
+        {
+
         }
 
 
