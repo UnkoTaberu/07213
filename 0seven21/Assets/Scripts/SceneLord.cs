@@ -9,7 +9,7 @@ public class SceneLord : MonoBehaviour {
 
     float startTime;
 
-    private int scenenum = 1;
+    public static int score = 1;
 
     private Text text;
 
@@ -17,22 +17,34 @@ public class SceneLord : MonoBehaviour {
     void Start () {
         startTime = Time.time;
 
-        this.text = this.GetComponent<Text>();
-        this.text.text = scenenum + "階";
-        scenenum++;
+            this.text = this.GetComponent<Text>();
+            this.text.text = score + "階";
+            score++;
+       
     }
 	
 	// Update is called once per frame
 	void Update () {
 
-        
-
-        if (Time.time - startTime > 0.5f)
+        if(score <= 3)
         {
-            // シーン切り替え
-            SceneManager.LoadScene("Main");
+            if (Time.time - startTime > 0.5f)
+            {
+                // シーン切り替え
+                SceneManager.LoadScene("Main");
 
-            
+
+            }
         }
+        else
+        {
+            if (Time.time - startTime > 0.5f)
+            {
+                SceneManager.LoadScene("startpokepoke");
+            }
+
+        }
+
+
     }
 }
