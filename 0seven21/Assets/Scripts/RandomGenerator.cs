@@ -48,6 +48,7 @@ public class RandomGenerator : MonoBehaviour {
                 var tile = Instantiate(Train.ItemTrain[rx.Next(Train.ItemTrain.Length - 1)]);
                 tile.transform.SetParent(ItemtileContainer);
                 tile.transform.localPosition = new Vector2(x, y);
+                tile.AddComponent<Item_Pick_Up>();
 
                 i++;
 

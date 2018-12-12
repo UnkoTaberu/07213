@@ -44,10 +44,12 @@ public class Player : MonoBehaviour
         if (r_generator.spmap[(int)tmp.x, (int)tmp.y] == 2) //階段の上に乗った時
         {
             SceneManager.LoadScene("Scene");
-        }else if(r_generator.spmap[(int)tmp.x, (int)tmp.y] == 3) //アイテムの上に乗った時
-        {
-
         }
+
+        //else if(r_generator.spmap[(int)tmp.x, (int)tmp.y] == 3) //アイテムの上に乗った時
+        //{
+
+        //}
 
 
         //   rigidbodyCache.AddForce(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * 10f);
