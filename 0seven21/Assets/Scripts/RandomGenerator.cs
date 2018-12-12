@@ -8,12 +8,11 @@ public class RandomGenerator : MonoBehaviour {
     DungeonGenerator generator;
 
     [SerializeField]
-    GameObject item;
+    Train_Object Train;
+
     [SerializeField]
     Transform ItemtileContainer;
 
-    [SerializeField]
-    GameObject steps;
     [SerializeField]
     Transform StepstileContainer;
 
@@ -25,7 +24,6 @@ public class RandomGenerator : MonoBehaviour {
     public void SpGenerate(int[,] map)
     {
         int x = 0, y = 0, i = 0;
-        item.gameObject.SetActive(true);
 
         spmap = new int[generator.width, generator.height];
 
@@ -47,7 +45,7 @@ public class RandomGenerator : MonoBehaviour {
             if (spmap[x = rx.Next(generator.width), y = ry.Next(generator.height)] == 1 && i != sp_capacity) // アイテムを配置
             {
                 spmap[x, y] = 3;
-                var tile = Instantiate(item);
+                var tile = Instantiate(Train.ItemTrain[rx.Next(Train.ItemTrain.Length - 1)]);
                 tile.transform.SetParent(ItemtileContainer);
                 tile.transform.localPosition = new Vector2(x, y);
 
@@ -58,7 +56,7 @@ public class RandomGenerator : MonoBehaviour {
                 if (spmap[x = rx.Next(generator.width), y = ry.Next(generator.height)] == 1)
                 {
                     spmap[x, y] = 2;
-                    var tile = Instantiate(steps);
+                    var tile = Instantiate(Train.ItemTrain[5]);
                     tile.transform.SetParent(StepstileContainer);
                     tile.transform.localPosition = new Vector2(x, y);
 
