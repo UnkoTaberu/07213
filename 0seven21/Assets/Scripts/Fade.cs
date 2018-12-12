@@ -14,9 +14,10 @@ public class Fade : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Space))
         
             text.color = new Color(132f / 255f, 68f / 255f, 205f / 255f);
+            
 
 
-        
+
 
     }
 	

@@ -41,6 +41,7 @@ public class FadeManager : MonoBehaviour
 	private bool isFading = false;
 	/// <summary>フェード色</summary>
 	public Color fadeColor = Color.black;
+    private AudioSource sound01;
 
 
 	public void Awake ()
@@ -88,10 +89,13 @@ public class FadeManager : MonoBehaviour
 
 				//int i = 0;
 				foreach (string sceneName in scenes) {
-
+                    //AudioSourceコンポーネントを取得し、変数に格納
+                    sound01 = GetComponent<AudioSource>();
                     if (Input.GetKeyDown(KeyCode.Space))
                     {
+                        
                         LoadScene(sceneName, 1.0f);
+                        sound01.PlayOneShot(sound01.clip);
 
 
                     }
