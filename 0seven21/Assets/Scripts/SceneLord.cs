@@ -15,12 +15,16 @@ public class SceneLord : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        
+
         startTime = Time.time;
 
-            this.text = this.GetComponent<Text>();
-            this.text.text = score + "階";
-            score++;
-       
+        this.text = this.GetComponent<Text>();
+        this.text.text = score + "階";
+        score++;
+
+        
+
     }
 	
 	// Update is called once per frame
@@ -28,8 +32,10 @@ public class SceneLord : MonoBehaviour {
 
         if(score <= 3)
         {
-            if (Time.time - startTime > 0.5f)
+            
+            if (Time.time - startTime > 1f)
             {
+                
                 // シーン切り替え
                 SceneManager.LoadScene("Main");
 
@@ -38,9 +44,9 @@ public class SceneLord : MonoBehaviour {
         }
         else
         {
-            if (Time.time - startTime > 0.5f)
+            if (Time.time - startTime > 1f)
             {
-                SceneManager.LoadScene("startpokepoke");
+                SceneManager.LoadScene("GameTitle");
             }
 
         }

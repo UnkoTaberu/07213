@@ -5,12 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/startpokepoke.unity
     guid: c022ac591c453af43bec028d2a0909ac
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/GameTitle.unity
+    guid: 9bcd86865ab78904ca642873b4a9b094
   - enabled: 1
     path: Assets/Main.unity
     guid: 7af4c538876a4544e9232d9fabfe835d
