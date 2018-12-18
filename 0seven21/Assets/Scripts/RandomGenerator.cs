@@ -57,7 +57,7 @@ public class RandomGenerator : MonoBehaviour {
                 if (spmap[x = rx.Next(generator.width), y = ry.Next(generator.height)] == 1)
                 {
                     spmap[x, y] = 2;
-                    var tile = Instantiate(Train.ItemTrain[5]);
+                    var tile = Instantiate(Train.ItemTrain[10]);
                     tile.transform.SetParent(StepstileContainer);
                     tile.transform.localPosition = new Vector2(x, y);
 
