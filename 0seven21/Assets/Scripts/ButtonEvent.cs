@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class ButtonEvent : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class ButtonEvent : MonoBehaviour
     void Start()
     {
         canvasGroup = GetComponentInParent<CanvasGroup>();
-        returnButton = transform.parent.Find("Exit").gameObject;
+        //returnButton = transform.parent.Find("Exit").gameObject;
     }
 
     void OnEnable()
@@ -74,4 +75,15 @@ public class ButtonEvent : MonoBehaviour
     {
         EventSystem.current.SetSelectedGameObject(returnButton);
     }
+
+    public void SceneLord()
+    {
+        SceneManager.LoadScene("Scene");
+    }
+
+    public void CanselComand()
+    {
+        
+    }
+
 }
