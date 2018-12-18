@@ -302,6 +302,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   informationString: 
   informationText: {fileID: 0}
+  targetObject: {fileID: 0}
+  b: 0
 --- !u!1 &262598163
 GameObject:
   m_ObjectHideFlags: 0
@@ -1224,6 +1226,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   informationString: 
   informationText: {fileID: 0}
+  targetObject: {fileID: 0}
+  b: 0
 --- !u!1 &830011767
 GameObject:
   m_ObjectHideFlags: 0
@@ -1323,6 +1327,8 @@ MonoBehaviour:
   - {fileID: 1857784391}
   - {fileID: 1993951119}
   playerScript: {fileID: 0}
+  targetObject: {fileID: 1847115371}
+  a: 0
 --- !u!212 &990525235
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1734,6 +1740,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   informationString: 
   informationText: {fileID: 0}
+  targetObject: {fileID: 0}
+  b: 0
 --- !u!1 &1242703392
 GameObject:
   m_ObjectHideFlags: 0
@@ -2495,6 +2503,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   informationString: 
   informationText: {fileID: 0}
+  targetObject: {fileID: 990525231}
+  b: 0
 --- !u!114 &1847115375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2720,6 +2730,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   informationString: 
   informationText: {fileID: 0}
+  targetObject: {fileID: 990525231}
+  b: 0
 --- !u!114 &1977294648
 MonoBehaviour:
   m_ObjectHideFlags: 0
