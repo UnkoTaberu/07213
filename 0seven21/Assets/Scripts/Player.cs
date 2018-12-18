@@ -15,6 +15,15 @@ public class Player : MonoBehaviour
     RandomGenerator r_generator;
     [SerializeField]
     private GameObject propertyWindow;
+
+    // 長押しフレーム数
+    private int presskeyFrames = 0;
+    // 長押し判定の閾値（フレーム数）
+    private int thresholdLong = 15;
+    // 軽く押した判定の閾値（フレーム数）
+    private int thresholdShort = 0;
+    private float timeleft;
+
     //　ステータスウインドウの全部の画面
     [SerializeField]
     private GameObject[] windowLists;
@@ -38,6 +47,63 @@ public class Player : MonoBehaviour
         
         if (a == 0)
         {
+            presskeyFrames += (
+            Input.GetKey(KeyCode.A) ||
+            Input.GetKey(KeyCode.S) ||
+            Input.GetKey(KeyCode.D) ||
+            Input.GetKey(KeyCode.W)) ? 1 : 0;
+
+            if (Input.GetKeyUp(KeyCode.A)) presskeyFrames = 0;
+            if (Input.GetKeyUp(KeyCode.S)) presskeyFrames = 0;
+            if (Input.GetKeyUp(KeyCode.D)) presskeyFrames = 0;
+            if (Input.GetKeyUp(KeyCode.W)) presskeyFrames = 0;
+
+            if (thresholdLong <= presskeyFrames)
+            {
+                //長押し
+                timeleft -= Time.deltaTime;
+                if (timeleft <= 0.0)
+                {
+                    timeleft = 0.2f;
+                    if (Input.GetKey(KeyCode.A))
+                    {
+                        WallFrag(-1, 0, 0);
+                    }
+                    else if (Input.GetKey(KeyCode.D))
+                    {
+                        WallFrag(1, 0, 0);
+                    }
+                    else if (Input.GetKey(KeyCode.W))
+                    {
+                        WallFrag(0, 1, 0);
+                    }
+                    else if (Input.GetKey(KeyCode.S))
+                    {
+                        WallFrag(0, -1, 0);
+                    }
+                }
+            }
+            else if (thresholdShort <= presskeyFrames)
+            {
+                //短押し
+                if (Input.GetKeyDown(KeyCode.A))
+                {
+                    WallFrag(-1, 0, 0);
+                }
+                else if (Input.GetKeyDown(KeyCode.D))
+                {
+                    WallFrag(1, 0, 0);
+                }
+                else if (Input.GetKeyDown(KeyCode.W))
+                {
+                    WallFrag(0, 1, 0);
+                }
+                else if (Input.GetKeyDown(KeyCode.S))
+                {
+                    WallFrag(0, -1, 0);
+                }
+            }
+            /*
             if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
             {
                 WallFrag(-1, 0, 0);
@@ -54,6 +120,7 @@ public class Player : MonoBehaviour
             {
                 WallFrag(0, -1, 0);
             }
+            */
         }
       
 
