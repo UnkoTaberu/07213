@@ -17,14 +17,16 @@ public class ButtonEvent : MonoBehaviour
     private Text informationText;
     //　自身の親のCanvasGroup
     private CanvasGroup canvasGroup;
-    //　前の画面に戻るボタン
-    private GameObject returnButton;
+
+    // キャンセルボタン用
+    public int b = 0;
 
     void Start()
     {
         canvasGroup = GetComponentInParent<CanvasGroup>();
         //returnButton = transform.parent.Find("Exit").gameObject;
     }
+
 
     void OnEnable()
     {
@@ -59,6 +61,9 @@ public class ButtonEvent : MonoBehaviour
         {
             //　ウインドウを非アクティブにする
             transform.root.gameObject.SetActive(false);
+
+            // キャンセルボタンが押された処理
+            b = 2;
         }
     }
 
@@ -70,20 +75,10 @@ public class ButtonEvent : MonoBehaviour
             Camera.main.GetComponent<OperationStatusWindow>().ChangeWindow(window);
         }
     }
-    //　前の画面に戻るボタンを選択状態にする
-    public void SelectReturnButton()
-    {
-        EventSystem.current.SetSelectedGameObject(returnButton);
-    }
 
     public void SceneLord()
     {
         SceneManager.LoadScene("Scene");
-    }
-
-    public void CanselComand()
-    {
-        
     }
 
 }

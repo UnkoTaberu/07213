@@ -30,22 +30,19 @@ public class Player : MonoBehaviour
 
     public OperationStatusWindow playerScript;
 
+    public GameObject targetObject;
+
     int x = 0, y = 0, i = 0;
-    int a = 0;
+    public int a = 0;
 
-
-    void Start()
-    {
-       
-
-
-        //rigidbodyCache = GetComponent<Rigidbody2D>();
-    }
 
     void Update()
     {
-        
-        if (a == 0)
+        // ButtonEventから値を取得
+        int say = targetObject.GetComponent<ButtonEvent>().b;
+
+        // 階段の上、メニュー画面を開いていない場合
+        if (a == 0 || say == 2)
         {
             presskeyFrames += (
             Input.GetKey(KeyCode.A) ||
@@ -103,29 +100,14 @@ public class Player : MonoBehaviour
                     WallFrag(0, -1, 0);
                 }
             }
-            /*
-            if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
-            {
-                WallFrag(-1, 0, 0);
-            }
-            else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
-            {
-                WallFrag(1, 0, 0);
-            }
-            else if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
-            {
-                WallFrag(0, 1, 0);
-            }
-            else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
-            {
-                WallFrag(0, -1, 0);
-            }
-            */
+
         }
       
 
         Vector3 tmp = GameObject.Find("Player").transform.position;
-        if (r_generator.spmap[(int)tmp.x, (int)tmp.y] == 2) //階段の上に乗った時
+
+        //階段の上に乗った時
+        if (r_generator.spmap[(int)tmp.x, (int)tmp.y] == 2)
         {
             
             if (a == 0)
@@ -140,15 +122,14 @@ public class Player : MonoBehaviour
             //   rigidbodyCache.AddForce(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * 10f);
           
         }
-        //else if(a == 1)
-        //{
-        //    propertyWindow.SetActive(!propertyWindow.activeSelf);
-        //    //　MainWindowをセット
-        //   // ChangeWindow(windowLists[2]);
+        // 階段から移動した時
+        else if (a == 1)
+        {
+            a = 0;
 
-        //    a = 0;
+            targetObject.GetComponent<ButtonEvent>().b = a;
 
-        //}
+        }
 
     }
 
