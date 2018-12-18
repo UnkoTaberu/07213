@@ -302,7 +302,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   informationString: 
   informationText: {fileID: 0}
-  targetObject: {fileID: 0}
   b: 0
 --- !u!1 &262598163
 GameObject:
@@ -1226,7 +1225,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   informationString: 
   informationText: {fileID: 0}
-  targetObject: {fileID: 0}
   b: 0
 --- !u!1 &830011767
 GameObject:
@@ -1740,7 +1738,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   informationString: 
   informationText: {fileID: 0}
-  targetObject: {fileID: 0}
   b: 0
 --- !u!1 &1242703392
 GameObject:
@@ -2305,6 +2302,7 @@ MonoBehaviour:
   - {fileID: 1219799303}
   - {fileID: 1857784391}
   - {fileID: 1993951119}
+  targetObject: {fileID: 990525231}
   bulletCount: 0
 --- !u!1 &1730100347
 GameObject:
@@ -2316,7 +2314,6 @@ GameObject:
   - component: {fileID: 1730100348}
   - component: {fileID: 1730100350}
   - component: {fileID: 1730100349}
-  - component: {fileID: 1730100351}
   m_Layer: 5
   m_Name: MenuArea
   m_TagString: Untagged
@@ -2376,17 +2373,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1730100347}
---- !u!114 &1730100351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1730100347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81ef3a10646f0a4458bfa264fd4195e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1847115371
 GameObject:
   m_ObjectHideFlags: 0
@@ -2503,7 +2489,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   informationString: 
   informationText: {fileID: 0}
-  targetObject: {fileID: 990525231}
   b: 0
 --- !u!114 &1847115375
 MonoBehaviour:
@@ -2730,7 +2715,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   informationString: 
   informationText: {fileID: 0}
-  targetObject: {fileID: 990525231}
   b: 0
 --- !u!114 &1977294648
 MonoBehaviour:
