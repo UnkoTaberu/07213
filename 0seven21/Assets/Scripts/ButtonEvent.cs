@@ -63,7 +63,7 @@ public class ButtonEvent : MonoBehaviour
             transform.root.gameObject.SetActive(false);
 
             // キャンセルボタンが押された処理
-            b = 2;
+            b = 1;
         }
     }
 

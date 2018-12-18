@@ -30,7 +30,11 @@ public class Player : MonoBehaviour
 
     public OperationStatusWindow playerScript;
 
+    // ButttonEvent用
     public GameObject targetObject;
+
+    // OperationStatusWindow用
+    public GameObject StatusObject;
 
     int x = 0, y = 0, i = 0;
     public int a = 0;
@@ -39,10 +43,13 @@ public class Player : MonoBehaviour
     void Update()
     {
         // ButtonEventから値を取得
-        int say = targetObject.GetComponent<ButtonEvent>().b;
+        int btn = targetObject.GetComponent<ButtonEvent>().b;
+
+        // OperationStatusWindowから値を取得
+        int ops = StatusObject.GetComponent<OperationStatusWindow>().v;
 
         // 階段の上、メニュー画面を開いていない場合
-        if (a == 0 || say == 2)
+        if (a == 0 && ops != 2 || btn == 1 && ops != 2)
         {
             presskeyFrames += (
             Input.GetKey(KeyCode.A) ||
@@ -102,8 +109,11 @@ public class Player : MonoBehaviour
             }
 
         }
+        //else
+        //{
+        //    StatusObject.GetComponent<OperationStatusWindow>().v = 0;
+        //}
       
-
         Vector3 tmp = GameObject.Find("Player").transform.position;
 
         //階段の上に乗った時
