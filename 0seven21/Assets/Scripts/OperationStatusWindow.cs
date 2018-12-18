@@ -11,6 +11,8 @@ public class OperationStatusWindow : MonoBehaviour
     [SerializeField]
     private GameObject[] windowLists;
 
+    public int bulletCount;
+
     void Update()
     {
         //　ステータスウインドウのオン・オフ
@@ -40,5 +42,7 @@ public class OperationStatusWindow : MonoBehaviour
             EventSystem.current.SetSelectedGameObject(window.transform.Find("MenuArea").GetChild(0).gameObject);
         }
     }
+
+
 }
 
