@@ -109,10 +109,6 @@ public class Player : MonoBehaviour
             }
 
         }
-        //else
-        //{
-        //    StatusObject.GetComponent<OperationStatusWindow>().v = 0;
-        //}
       
         Vector3 tmp = GameObject.Find("Player").transform.position;
 
