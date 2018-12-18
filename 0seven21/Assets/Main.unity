@@ -1326,6 +1326,7 @@ MonoBehaviour:
   - {fileID: 1993951119}
   playerScript: {fileID: 0}
   targetObject: {fileID: 1847115371}
+  StatusObject: {fileID: 1683519040}
   a: 0
 --- !u!212 &990525235
 SpriteRenderer:
@@ -2303,7 +2304,8 @@ MonoBehaviour:
   - {fileID: 1857784391}
   - {fileID: 1993951119}
   targetObject: {fileID: 990525231}
-  bulletCount: 0
+  play: 0
+  v: 0
 --- !u!1 &1730100347
 GameObject:
   m_ObjectHideFlags: 0
