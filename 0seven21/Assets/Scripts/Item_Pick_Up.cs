@@ -6,18 +6,15 @@ using UnityEngine.EventSystems;
 
 public class Item_Pick_Up : MonoBehaviour {
 
-    public Text title;
-    public string unk;
+
     [SerializeField]
-    private GameObject propertyWindow;
-    //　ステータスウインドウの全部の画面
-    [SerializeField]
-    private GameObject[] windowLists;
+    ItemList ilist;
 
 
     void Start()
     {
-        
+        GameObject imset = GameObject.Find("ItemMenuSet");
+        ilist = imset.gameObject.GetComponent<ItemList>();
     }
     void Update()
     {
@@ -26,14 +23,8 @@ public class Item_Pick_Up : MonoBehaviour {
 
         if(player.x == item.x && player.y == item.y)
         {
-            unk = this.transform.name;
 
-            // title.text = unk;
-
-            //propertyWindow.SetActive(!propertyWindow.activeSelf);
-            ////　MainWindowをセット
-            //ChangeWindow(windowLists[0]);
-
+            ilist.setIlist(this.transform.name);
 
             Destroy(this.gameObject);
 
