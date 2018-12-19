@@ -15,16 +15,17 @@ public class OperationStatusWindow : MonoBehaviour
 
     public int play;
 
-    public int v;
-    private int a;
+    public int menuOpen;
+    private int menuClose;
+
 
     void Update()
     {
 
         // Playerから値を取得
-        play = targetObject.GetComponent<Player>().a;
+        play = targetObject.GetComponent<Player>().Stairs;
 
-        if (play == 0 && a <= 1)
+        if (play == 0 && menuClose <= 1)
         {
             //　ステータスウインドウのオン・オフ
             if (Input.GetButtonDown("Start"))
@@ -34,18 +35,18 @@ public class OperationStatusWindow : MonoBehaviour
                 ChangeWindow(windowLists[0]);
 
                 // メニューが開いているか判別
-                v = 2;
+                menuOpen = 2;
 
                 // メニューが閉じるまでの判別
-                a++; 
+                menuClose++; 
             }     
         }
-        else if(a == 2)
+        else if(menuClose == 2)
         {
 
             // 値を再設定
-            v = 0;
-            a = 0;
+            menuOpen = 0;
+            menuClose = 0;
 
         }
        
@@ -65,11 +66,10 @@ public class OperationStatusWindow : MonoBehaviour
             {
                 item.SetActive(false);
             }
+        
             EventSystem.current.SetSelectedGameObject(window.transform.Find("MenuArea").GetChild(0).gameObject);
-
-
-
-
+            
+           
         }
             
     }
