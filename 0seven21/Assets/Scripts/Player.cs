@@ -39,6 +39,12 @@ public class Player : MonoBehaviour
     int x = 0, y = 0, i = 0;
     public int a = 0;
 
+    Animator anim;
+
+    void Start()
+    {
+        anim = GetComponent("Animator") as Animator;
+    }
 
     void Update()
     {
@@ -93,18 +99,22 @@ public class Player : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.A))
                 {
                     WallFrag(-1, 0, 0);
+                    anim.SetInteger("isWalk", 2);
                 }
                 else if (Input.GetKeyDown(KeyCode.D))
                 {
                     WallFrag(1, 0, 0);
+                    anim.SetInteger("isWalk", 3);
                 }
                 else if (Input.GetKeyDown(KeyCode.W))
                 {
                     WallFrag(0, 1, 0);
+                    anim.SetInteger("isWalk", 1);
                 }
                 else if (Input.GetKeyDown(KeyCode.S))
                 {
                     WallFrag(0, -1, 0);
+                    anim.SetInteger("isWalk", 0);
                 }
             }
 
