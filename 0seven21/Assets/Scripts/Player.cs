@@ -37,7 +37,9 @@ public class Player : MonoBehaviour
     public GameObject StatusObject;
 
     int x = 0, y = 0, i = 0;
-    public int a = 0;
+
+    // 階段判別用
+    public int Stairs = 0;
 
     Animator anim;
 
@@ -49,13 +51,13 @@ public class Player : MonoBehaviour
     void Update()
     {
         // ButtonEventから値を取得
-        int btn = targetObject.GetComponent<ButtonEvent>().b;
+        int btn = targetObject.GetComponent<ButtonEvent>().canselBtn;
 
         // OperationStatusWindowから値を取得
-        int ops = StatusObject.GetComponent<OperationStatusWindow>().v;
+        int ops = StatusObject.GetComponent<OperationStatusWindow>().menuOpen;
 
         // 階段の上、メニュー画面を開いていない場合
-        if (a == 0 && ops != 2 || btn == 1 && ops != 2)
+        if (Stairs == 0 && ops != 2 || btn == 1 && ops != 2)
         {
             presskeyFrames += (
             Input.GetKey(KeyCode.A) ||
@@ -126,24 +128,24 @@ public class Player : MonoBehaviour
         if (r_generator.spmap[(int)tmp.x, (int)tmp.y] == 2)
         {
             
-            if (a == 0)
+            if (Stairs == 0)
             {
                 propertyWindow.SetActive(!propertyWindow.activeSelf);
                 //　MainWindowをセット
                 ChangeWindow(windowLists[2]);
 
-                a = 1;
+                Stairs = 1;
             }
 
             //   rigidbodyCache.AddForce(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * 10f);
           
         }
         // 階段から移動した時
-        else if (a == 1)
+        else if (Stairs == 1)
         {
-            a = 0;
+            Stairs = 0;
 
-            targetObject.GetComponent<ButtonEvent>().b = a;
+            targetObject.GetComponent<ButtonEvent>().canselBtn = Stairs;
 
         }
 

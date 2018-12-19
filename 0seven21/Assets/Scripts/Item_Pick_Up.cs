@@ -9,7 +9,14 @@ public class Item_Pick_Up : MonoBehaviour {
 
     [SerializeField]
     ItemList ilist;
+    //[SerializeField]
+    //private GameObject propertyWindow;
+    ////　ステータスウインドウの全部の画面
+    //[SerializeField]
+    //private GameObject[] windowLists;
 
+    //// 階段判別用
+    //public int Item = 0;
 
     void Start()
     {
@@ -21,16 +28,21 @@ public class Item_Pick_Up : MonoBehaviour {
         Vector3 player = GameObject.Find("Player").transform.position;
         Vector3 item = this.transform.position;
 
-        if(player.x == item.x && player.y == item.y)
+
+        // アイテムの上に乗った時
+        if (player.x == item.x && player.y == item.y)
         {
 
-            ilist.setIlist(this.transform.name);
+            //propertyWindow.SetActive(!propertyWindow.activeSelf);
+            ////　MainWindowをセット
+            //ChangeWindow(windowLists[3]);
+            //ilist.setIlist(this.transform.name);
 
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
 
 
         }
-
+        
     }
 
     ////　ステータス画面のウインドウのオン・オフメソッド

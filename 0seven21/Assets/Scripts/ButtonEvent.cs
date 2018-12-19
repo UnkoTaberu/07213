@@ -19,7 +19,7 @@ public class ButtonEvent : MonoBehaviour
     private CanvasGroup canvasGroup;
 
     // キャンセルボタン用
-    public int b = 0;
+    public int canselBtn = 0;
 
     void Start()
     {
@@ -63,7 +63,7 @@ public class ButtonEvent : MonoBehaviour
             transform.root.gameObject.SetActive(false);
 
             // キャンセルボタンが押された処理
-            b = 1;
+            canselBtn = 1;
         }
     }
 
