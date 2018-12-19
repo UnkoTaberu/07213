@@ -20,6 +20,7 @@ public class OperationStatusWindow : MonoBehaviour
 
     void Update()
     {
+
         // Playerから値を取得
         play = targetObject.GetComponent<Player>().a;
 
@@ -64,8 +65,11 @@ public class OperationStatusWindow : MonoBehaviour
             {
                 item.SetActive(false);
             }
-            //　それぞれのウインドウのMenuAreaの最初の子要素をアクティブな状態にする
             EventSystem.current.SetSelectedGameObject(window.transform.Find("MenuArea").GetChild(0).gameObject);
+
+
+
+
         }
             
     }
