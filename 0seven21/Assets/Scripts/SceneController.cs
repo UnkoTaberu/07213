@@ -23,7 +23,7 @@ public class SceneController : MonoBehaviour
 
     void Start()
     {
-        regenerateButton.onClick.AddListener(Generate);
+        //regenerateButton.onClick.AddListener(Generate);
 
         Generate();
     }
