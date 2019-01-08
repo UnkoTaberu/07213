@@ -68,12 +68,26 @@ public class OperationStatusWindow : MonoBehaviour
             }
         
             EventSystem.current.SetSelectedGameObject(window.transform.Find("MenuArea").GetChild(0).gameObject);
-            
-           
+  
         }
             
     }
+    public void ItemChangeWindow(GameObject window)
+    {
+        foreach (var item in windowLists)
+        {
+            if (item == window)
+            {
+                item.SetActive(true);
+                EventSystem.current.SetSelectedGameObject(null);
+            }
+         
 
+            EventSystem.current.SetSelectedGameObject(window.transform.Find("MenuArea").GetChild(0).gameObject);
+
+        }
+
+    }
 
 }
 

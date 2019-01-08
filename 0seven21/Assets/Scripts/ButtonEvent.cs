@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 
 public class ButtonEvent : MonoBehaviour
 {
-
     //　インフォメーションテキストに表示する文字列
     [SerializeField]
     private string informationString;
@@ -27,13 +26,6 @@ public class ButtonEvent : MonoBehaviour
         //returnButton = transform.parent.Find("Exit").gameObject;
     }
 
-
-    void OnEnable()
-    {
-        //　装備アイテム選択中にステータス画面を抜けた時にボタンが無効化したままの場合もあるので立ち上げ時に有効化する
-        GetComponent<Button>().interactable = true;
-    }
-
     //　ボタンの上にマウスが入った時、またはキー操作で移動してきた時
     public void OnSelected()
     {
@@ -47,12 +39,6 @@ public class ButtonEvent : MonoBehaviour
             //informationText.text = informationString;
         }
     }
-
-    ////　ボタンから移動したら情報を削除
-    //public void OnDeselected()
-    //{
-    //    informationText.text = "";
-    //}
 
     //　ステータスウインドウを非アクティブにする
     public void DisableWindow()
@@ -76,9 +62,41 @@ public class ButtonEvent : MonoBehaviour
         }
     }
 
+    //　
+    public void ItemMenu(GameObject window)
+    {
+
+        if (canvasGroup == null || canvasGroup.interactable)
+        {
+            Camera.main.GetComponent<OperationStatusWindow>().ItemChangeWindow(window);
+        }
+
+    }
+
+
+    //　ゲーム終了ボタンを押したら実行する
+    public void GameEnd()
+    {   
+       
+        #if UNITY_EDITOR
+                    UnityEditor.EditorApplication.isPlaying = false;
+        #else
+		                            Application.Quit();
+        #endif
+                      
+    }
+
+    //　階層表示のシーンに遷移
     public void SceneLord()
     {
         SceneManager.LoadScene("Scene");
     }
+
+    //　タイトルのシーンに遷移
+    public void TitleSceneLord()
+    {
+        SceneManager.LoadScene("GameTitle");
+    }
+
 
 }
