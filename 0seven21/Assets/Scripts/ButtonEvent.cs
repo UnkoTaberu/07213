@@ -119,7 +119,11 @@ public class ButtonEvent : MonoBehaviour
         //    {
 
         //    }
-       
+         //   else if (components.text == "場所替えの杖")
+        //    {
+
+        //    }
+
     }
 
     //　ゲーム終了ボタンを押したら実行する
