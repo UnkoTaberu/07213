@@ -20,6 +20,9 @@ public class ButtonEvent : MonoBehaviour
     // キャンセルボタン用
     public int canselBtn = 0;
 
+    // 名前判別用
+
+
     void Start()
     {
         canvasGroup = GetComponentInParent<CanvasGroup>();
@@ -62,7 +65,7 @@ public class ButtonEvent : MonoBehaviour
         }
     }
 
-    //　
+    //　アイテム使用確認
     public void ItemMenu(GameObject window)
     {
 
@@ -71,8 +74,53 @@ public class ButtonEvent : MonoBehaviour
             Camera.main.GetComponent<OperationStatusWindow>().ItemChangeWindow(window);
         }
 
+        Text components = this.gameObject.GetComponentInChildren<Text>();
+        Text itext = GameObject.Find("ItemText").GetComponent<Text>();
+        itext.text = components.text;
+
     }
 
+    public void ItemuUse()
+    {
+
+        //    if (components.text == "かなしばりの杖")
+        //    {
+
+        //    }
+        //    else if (components.text == "やりすごしの壺")
+        //    {
+
+        //    }
+        //    else if (components.text == "バシルーラの杖")
+        //    {
+
+        //    }
+        //    else if (components.text == "飛びつきの杖")
+        //    {
+
+        //    }
+        //    else if (components.text == "高飛び草")
+        //    {
+
+        //    }
+        //    else if (components.text == "自爆の巻物")
+        //    {
+
+        //    }
+        //    else if (components.text == "煙草")
+        //    {
+
+        //    }
+        //    else if (components.text == "一時しのぎの杖")
+        //    {
+
+        //    }
+        //    else if (components.text == "ふきとばしの杖")
+        //    {
+
+        //    }
+       
+    }
 
     //　ゲーム終了ボタンを押したら実行する
     public void GameEnd()
