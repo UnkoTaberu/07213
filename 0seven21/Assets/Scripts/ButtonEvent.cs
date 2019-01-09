@@ -150,5 +150,11 @@ public class ButtonEvent : MonoBehaviour
         SceneManager.LoadScene("GameTitle");
     }
 
+    //　メインのシーンに遷移
+    public void MainSceneLord()
+    {
+        SceneManager.LoadScene("Main");
+    }
+
 
 }
