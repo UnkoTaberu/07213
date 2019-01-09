@@ -12,7 +12,7 @@ public class ButtonSelect : MonoBehaviour
                 SceneManager.LoadScene("Scene");
                 break;
             case "Tips":
-                SceneManager.LoadScene("Rule");
+                SceneManager.LoadScene("Game_Rulu");
                 break;
             default:
                 break;
