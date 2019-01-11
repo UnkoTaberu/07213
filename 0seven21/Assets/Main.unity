@@ -211,6 +211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   informationString: 
   informationText: {fileID: 0}
+  target: {fileID: 0}
   canselBtn: 0
 --- !u!114 &80332298
 MonoBehaviour:
@@ -459,6 +460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   informationString: 
   informationText: {fileID: 0}
+  target: {fileID: 0}
   canselBtn: 0
 --- !u!1 &237714889
 GameObject:
@@ -650,6 +652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   informationString: 
   informationText: {fileID: 0}
+  target: {fileID: 0}
   canselBtn: 0
 --- !u!1 &262598163
 GameObject:
@@ -1312,6 +1315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   informationString: 
   informationText: {fileID: 0}
+  target: {fileID: 0}
   canselBtn: 0
 --- !u!1 &369786607
 GameObject:
@@ -1603,6 +1607,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   informationString: 
   informationText: {fileID: 0}
+  target: {fileID: 0}
   canselBtn: 0
 --- !u!114 &394905141
 MonoBehaviour:
@@ -2138,6 +2143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   informationString: 
   informationText: {fileID: 0}
+  target: {fileID: 0}
   canselBtn: 0
 --- !u!114 &535492614
 MonoBehaviour:
@@ -2486,6 +2492,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   informationString: 
   informationText: {fileID: 0}
+  target: {fileID: 0}
   canselBtn: 0
 --- !u!1 &616250296
 GameObject:
@@ -2586,6 +2593,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   informationString: 
   informationText: {fileID: 0}
+  target: {fileID: 0}
   canselBtn: 0
 --- !u!114 &616250300
 MonoBehaviour:
@@ -3047,6 +3055,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   informationString: 
   informationText: {fileID: 0}
+  target: {fileID: 0}
   canselBtn: 0
 --- !u!1 &830011767
 GameObject:
@@ -3285,6 +3294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   informationString: 
   informationText: {fileID: 0}
+  target: {fileID: 0}
   canselBtn: 0
 --- !u!114 &907818480
 MonoBehaviour:
@@ -3533,6 +3543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   informationString: 
   informationText: {fileID: 0}
+  target: {fileID: 0}
   canselBtn: 0
 --- !u!1 &973056417
 GameObject:
@@ -3707,6 +3718,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   informationString: 
   informationText: {fileID: 0}
+  target: {fileID: 0}
   canselBtn: 0
 --- !u!1 &990525231
 GameObject:
@@ -4393,6 +4405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   informationString: 
   informationText: {fileID: 0}
+  target: {fileID: 0}
   canselBtn: 0
 --- !u!1 &1255116150
 GameObject:
@@ -4833,6 +4846,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   informationString: 
   informationText: {fileID: 0}
+  target: {fileID: 0}
   canselBtn: 0
 --- !u!1 &1415395992
 GameObject:
@@ -5520,6 +5534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   informationString: 
   informationText: {fileID: 0}
+  target: {fileID: 0}
   canselBtn: 0
 --- !u!1 &1675004569
 GameObject:
@@ -5694,6 +5709,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   informationString: 
   informationText: {fileID: 0}
+  target: {fileID: 0}
   canselBtn: 0
 --- !u!1 &1683519040
 GameObject:
@@ -6206,6 +6222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   informationString: 
   informationText: {fileID: 0}
+  target: {fileID: 0}
   canselBtn: 0
 --- !u!1 &1847115371
 GameObject:
@@ -6323,6 +6340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   informationString: 
   informationText: {fileID: 0}
+  target: {fileID: 0}
   canselBtn: 0
 --- !u!114 &1847115375
 MonoBehaviour:
@@ -6788,6 +6806,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   informationString: 
   informationText: {fileID: 0}
+  target: {fileID: 0}
   canselBtn: 0
 --- !u!1 &1977294644
 GameObject:
@@ -6845,7 +6864,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1977294647}
-          m_MethodName: SceneLord
+          m_MethodName: ThisSceneLord
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -6862,7 +6881,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1977294647}
-          m_MethodName: SceneLord
+          m_MethodName: ThisSceneLord
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -6888,6 +6907,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   informationString: 
   informationText: {fileID: 0}
+  target: {fileID: 0}
   canselBtn: 0
 --- !u!114 &1977294648
 MonoBehaviour:
@@ -7148,6 +7168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   informationString: 
   informationText: {fileID: 0}
+  target: {fileID: 0}
   canselBtn: 0
 --- !u!114 &1994348841
 MonoBehaviour:

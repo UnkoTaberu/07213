@@ -14,13 +14,16 @@ public class ButtonEvent : MonoBehaviour
     //　インフォメーションテキスト
     [SerializeField]
     private Text informationText;
+    //　
+    [SerializeField]
+    SceneLord target;
     //　自身の親のCanvasGroup
     private CanvasGroup canvasGroup;
 
     // キャンセルボタン用
     public int canselBtn = 0;
 
-    // 名前判別用
+    public static int b = 0;
 
 
     void Start()
@@ -139,7 +142,7 @@ public class ButtonEvent : MonoBehaviour
     }
 
     //　階層表示のシーンに遷移
-    public void SceneLord()
+    public void ThisSceneLord()
     {
         SceneManager.LoadScene("Scene");
     }
@@ -147,6 +150,7 @@ public class ButtonEvent : MonoBehaviour
     //　タイトルのシーンに遷移
     public void TitleSceneLord()
     {
+        SceneLord.score = 1;
         SceneManager.LoadScene("Game_Title");
     }
 
@@ -155,6 +159,5 @@ public class ButtonEvent : MonoBehaviour
     {
         SceneManager.LoadScene("Main");
     }
-
 
 }
