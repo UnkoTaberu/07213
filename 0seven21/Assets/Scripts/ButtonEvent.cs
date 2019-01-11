@@ -14,22 +14,27 @@ public class ButtonEvent : MonoBehaviour
     //　インフォメーションテキスト
     [SerializeField]
     private Text informationText;
-    //　
-    [SerializeField]
-    SceneLord target;
     //　自身の親のCanvasGroup
     private CanvasGroup canvasGroup;
+    //hpbar用
+    [SerializeField]
+    HpBarCtrl hbc;
+    public static Text itext;
 
     // キャンセルボタン用
     public int canselBtn = 0;
 
-    public static int b = 0;
+
 
 
     void Start()
     {
         canvasGroup = GetComponentInParent<CanvasGroup>();
         //returnButton = transform.parent.Find("Exit").gameObject;
+
+        //hpbar用
+        Slider slider = GameObject.Find("Slider").GetComponent<Slider>();
+        hbc = slider.gameObject.GetComponent<HpBarCtrl>();
     }
 
     //　ボタンの上にマウスが入った時、またはキー操作で移動してきた時
@@ -78,7 +83,7 @@ public class ButtonEvent : MonoBehaviour
         }
 
         Text components = this.gameObject.GetComponentInChildren<Text>();
-        Text itext = GameObject.Find("ItemText").GetComponent<Text>();
+        itext = GameObject.Find("ItemText").GetComponent<Text>();
         itext.text = components.text;
 
     }
@@ -86,46 +91,50 @@ public class ButtonEvent : MonoBehaviour
     public void ItemuUse()
     {
 
-        //    if (components.text == "かなしばりの杖")
-        //    {
+        //if (itext.text == "かなしばりの杖")
+        //{
 
-        //    }
-        //    else if (components.text == "やりすごしの壺")
-        //    {
+        //}
+        //else if (itext.text == "やりすごしの壺")
+        //{
 
-        //    }
-        //    else if (components.text == "バシルーラの杖")
-        //    {
+        //}
+        //else if (itext.text == "バシルーラの杖")
+        //{
 
-        //    }
-        //    else if (components.text == "飛びつきの杖")
-        //    {
+        //}
+        //else if (itext.text == "飛びつきの杖")
+        //{
 
-        //    }
-        //    else if (components.text == "高飛び草")
-        //    {
+        //}
+        //else if (itext.text == "高飛び草")
+        //{
 
-        //    }
-        //    else if (components.text == "自爆の巻物")
-        //    {
+        //}
+        //else if (itext.text == "自爆の巻物")
+        //{
 
-        //    }
-        //    else if (components.text == "煙草")
-        //    {
+        //}
+        Debug.Log("びんびいん");
+        Debug.Log(itext.text);
+        if (itext.text == "煙草")
+        {
+            Debug.Log("びんびいん");
 
-        //    }
-        //    else if (components.text == "一時しのぎの杖")
-        //    {
+            hbc.HpRecovery();
+        }
+        //else if (itext.text == "一時しのぎの杖")
+        //{
 
-        //    }
-        //    else if (components.text == "ふきとばしの杖")
-        //    {
+        //}
+        //else if (itext.text == "ふきとばしの杖")
+        //{
 
-        //    }
-         //   else if (components.text == "場所替えの杖")
-        //    {
+        //}
+        //else if (itext.text == "場所替えの杖")
+        //{
 
-        //    }
+        //}
 
     }
 
@@ -142,7 +151,7 @@ public class ButtonEvent : MonoBehaviour
     }
 
     //　階層表示のシーンに遷移
-    public void ThisSceneLord()
+    public void SceneLord()
     {
         SceneManager.LoadScene("Scene");
     }
@@ -150,7 +159,6 @@ public class ButtonEvent : MonoBehaviour
     //　タイトルのシーンに遷移
     public void TitleSceneLord()
     {
-        SceneLord.score = 1;
         SceneManager.LoadScene("Game_Title");
     }
 
@@ -159,5 +167,6 @@ public class ButtonEvent : MonoBehaviour
     {
         SceneManager.LoadScene("Main");
     }
+
 
 }

@@ -17,3 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game_Rulu.unity
     guid: ad6ca3173af765740a72a3dd3a94eb78
+  - enabled: 1
+    path: Assets/Game_End.unity
+    guid: 5d3fda62e3138e54da9f531d27a2fb57
