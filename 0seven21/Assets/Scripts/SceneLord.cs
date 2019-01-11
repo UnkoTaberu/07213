@@ -19,11 +19,10 @@ public class SceneLord : MonoBehaviour {
 
         startTime = Time.time;
 
+
         this.text = this.GetComponent<Text>();
         this.text.text = score + "階";
-        score++;
-
-        
+        score++;    
 
     }
 	
@@ -39,18 +38,18 @@ public class SceneLord : MonoBehaviour {
                 // シーン切り替え
                 SceneManager.LoadScene("Main");
 
-
             }
         }
         else
         {
             if (Time.time - startTime > 1f)
             {
-                SceneManager.LoadScene("GameTitle");
+                score = 1;
+                SceneManager.LoadScene("Game_Title");
             }
 
         }
 
-
     }
-}
+    
+}   
