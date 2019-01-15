@@ -6,4 +6,6 @@ public class Train_Object : MonoBehaviour {
 
     public GameObject[] ItemTrain;
 
+    public GameObject[] EnemyTrain;
+
 }
