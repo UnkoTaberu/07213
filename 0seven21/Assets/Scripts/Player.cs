@@ -177,7 +177,9 @@ public class Player : MonoBehaviour
         y = (int)tmp.y;
         if (scontroller.map[x + x2, y + y2] != 0)
         {
+            PlayerWas(scontroller.map);
             transform.Translate(x2, y2, z2);
+            PlayerNow(scontroller.map);
         }
     }
 
@@ -202,6 +204,31 @@ public class Player : MonoBehaviour
             }
 
         }
+    }
+
+    public void PlayerNow(int[,] map)
+    {
+        Vector3 tmp = GameObject.Find("Player").transform.position;
+
+        int x = 0, y = 0;
+
+        x = (int)tmp.x;
+        y = (int)tmp.y;
+
+        map[x, y] = 4;
+
+    }
+
+    public void PlayerWas(int[,] map)
+    {
+        Vector3 tmp = GameObject.Find("Player").transform.position;
+
+        int x = 0, y = 0;
+
+        x = (int)tmp.x;
+        y = (int)tmp.y;
+
+        map[x, y] = 1;
     }
 
 }

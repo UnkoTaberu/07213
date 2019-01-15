@@ -16,6 +16,9 @@ public class RandomGenerator : MonoBehaviour {
     [SerializeField]
     Transform StepstileContainer;
 
+    [SerializeField]
+    Transform EnemytileContainer;
+
     public int[,] spmap;
     [Range(0, 20)]
     public int sp_capacity = 3;
@@ -65,6 +68,29 @@ public class RandomGenerator : MonoBehaviour {
                 }
             }
 
+        }
+
+    }
+
+    public void Enemy(int[,] map)
+    {
+        int x = 0, y = 0, i = 0;
+
+        System.Random rx = new System.Random();
+        System.Random ry = new System.Random(rx.Next());
+
+        while (i != 3)
+        {
+            if (map[x = rx.Next(generator.width), y = ry.Next(generator.height)] == 1) // 敵を配置
+            {
+                map[x, y] = 8;
+                var tile = Instantiate(Train.EnemyTrain[rx.Next(Train.EnemyTrain.Length)]);
+                tile.transform.SetParent(EnemytileContainer);
+                tile.transform.localPosition = new Vector2(x, y);
+
+
+                i++;
+            }
         }
 
     }

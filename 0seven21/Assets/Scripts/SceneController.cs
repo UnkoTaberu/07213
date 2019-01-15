@@ -14,10 +14,12 @@ public class SceneController : MonoBehaviour
     GameObject wallPrefab;
     [SerializeField]
     GameObject floorPrefab;
-    //[SerializeField]
-    //Player player;
+    [SerializeField]
+    Player player;
     [SerializeField]
     Button regenerateButton;
+    [SerializeField]
+    RandomGenerator r_generator;
 
     public int[,] map;
 
@@ -51,6 +53,12 @@ public class SceneController : MonoBehaviour
                 tile.transform.localPosition = new Vector2(x, y);
             }
         }
+
+        //敵を配置
+        r_generator.Enemy(map);
+
+        //プレイヤーなうを配置
+        player.PlayerNow(map);
 
         wallPrefab.gameObject.SetActive(false);
         floorPrefab.gameObject.SetActive(false);
