@@ -151,7 +151,7 @@ public class ButtonEvent : MonoBehaviour
     }
 
     //　階層表示のシーンに遷移
-    public void SceneLord()
+    public void TheSceneLord()
     {
         SceneManager.LoadScene("Scene");
     }
@@ -159,6 +159,7 @@ public class ButtonEvent : MonoBehaviour
     //　タイトルのシーンに遷移
     public void TitleSceneLord()
     {
+        SceneLord.score = 1;
         SceneManager.LoadScene("Game_Title");
     }
 
