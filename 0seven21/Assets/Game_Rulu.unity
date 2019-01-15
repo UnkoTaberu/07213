@@ -447,6 +447,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   informationString: 
   informationText: {fileID: 0}
+  hbc: {fileID: 0}
   canselBtn: 0
 --- !u!114 &807265626
 MonoBehaviour:
@@ -598,6 +599,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   informationString: 
   informationText: {fileID: 0}
+  hbc: {fileID: 0}
   canselBtn: 0
 --- !u!114 &1058359255
 MonoBehaviour:
@@ -640,7 +642,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1058359254}
-        m_MethodName: MainSceneLord
+        m_MethodName: TheSceneLord
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
