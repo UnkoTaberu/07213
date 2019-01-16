@@ -21,7 +21,7 @@ public class SceneLord : MonoBehaviour {
 
 
         this.text = this.GetComponent<Text>();
-        this.text.text = score + "階";
+        this.text.text = score + "F";
         score++;    
 
     }
