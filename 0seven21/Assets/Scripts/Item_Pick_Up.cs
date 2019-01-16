@@ -36,7 +36,7 @@ public class Item_Pick_Up : MonoBehaviour {
             //propertyWindow.SetActive(!propertyWindow.activeSelf);
             ////　MainWindowをセット
             //ChangeWindow(windowLists[3]);
-            ilist.setIlist(this.transform.name);
+            ilist.SetIlist(this.transform.name);
 
             Destroy(this.gameObject);
 

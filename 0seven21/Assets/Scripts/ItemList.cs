@@ -17,9 +17,10 @@ public class ItemList : MonoBehaviour {
         for (int i = 0; i < ilist.Length; i++)
         {
             ilist[i] = "";
+            tlist[i].GetComponent<Text>().text = "";
         }
     }
-    public void setIlist(string item_name)
+    public void SetIlist(string item_name)
     {
         for (int i = 0; i < ilist.Length; i++)
         {
@@ -33,6 +34,29 @@ public class ItemList : MonoBehaviour {
 
         blist[item_i].gameObject.SetActive(true);
         tlist[item_i].GetComponent<Text>().text = ilist[item_i];
+    }
+    public string UnsetIlist()
+    {
+        for (int i = 0; i < ilist.Length - 1; i++)
+        {
+            if (tlist[i].GetComponent<Text>().text == "" && tlist[i + 1].GetComponent<Text>().text != "")
+            {
+                ilist[i] = ilist[i + 1];
+                ilist[i + 1] = "";
+
+                blist[i].gameObject.SetActive(true);
+                tlist[i].GetComponent<Text>().text = ilist[i];
+                blist[i + 1].gameObject.SetActive(false);
+                tlist[i + 1].GetComponent<Text>().text = ilist[i + 1];
+
+            }
+            else if(tlist[i].GetComponent<Text>().text == "" && tlist[i + 1].GetComponent<Text>().text == "")
+            {
+                blist[i].gameObject.SetActive(false);
+            }
+
+        }
+        return ilist[0];
     }
 
 }

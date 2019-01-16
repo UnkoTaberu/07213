@@ -19,8 +19,11 @@ public class ButtonEvent : MonoBehaviour
     //hpbar用
     [SerializeField]
     HpBarCtrl hbc;
+    //item使用用
     public static Text itext;
-
+    public static Text components;
+    [SerializeField]
+    ItemList ilist;
     // キャンセルボタン用
     public int canselBtn = 0;
 
@@ -35,6 +38,10 @@ public class ButtonEvent : MonoBehaviour
         //hpbar用
         Slider slider = GameObject.Find("Slider").GetComponent<Slider>();
         hbc = slider.gameObject.GetComponent<HpBarCtrl>();
+
+        //item使用用
+        GameObject test = GameObject.Find("ItemMenuSet");
+        ilist = test.gameObject.GetComponent<ItemList>();
     }
 
     //　ボタンの上にマウスが入った時、またはキー操作で移動してきた時
@@ -82,7 +89,7 @@ public class ButtonEvent : MonoBehaviour
             Camera.main.GetComponent<OperationStatusWindow>().ItemChangeWindow(window);
         }
 
-        Text components = this.gameObject.GetComponentInChildren<Text>();
+        components = this.gameObject.GetComponentInChildren<Text>();
         itext = GameObject.Find("ItemText").GetComponent<Text>();
         itext.text = components.text;
 
@@ -135,6 +142,10 @@ public class ButtonEvent : MonoBehaviour
         //{
 
         //}
+
+        itext.text = "";
+        components.text = "";
+        itext.text = ilist.UnsetIlist();
 
     }
 
