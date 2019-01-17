@@ -82,5 +82,13 @@ public class HpBarCtrl : MonoBehaviour
         _slider.value = _hp;
         Debug.Log("ちくび");
     }
+    public void HpDamage()
+    {
+        _hp = _hp - 500;
+
+        // HPゲージに値を設定
+        _slider.value = _hp;
+        Debug.Log("ちくび");
+    }
 
 }

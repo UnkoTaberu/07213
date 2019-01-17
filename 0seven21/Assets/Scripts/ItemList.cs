@@ -72,6 +72,7 @@ public class ItemList : MonoBehaviour {
             else if(tlist[i].GetComponent<Text>().text == "" && tlist[i + 1].GetComponent<Text>().text == "")
             {
                 blist[i].gameObject.SetActive(false);
+                ilist[i] = "";
             }
 
         }
