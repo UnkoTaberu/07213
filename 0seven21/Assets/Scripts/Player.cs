@@ -198,7 +198,7 @@ public class Player : MonoBehaviour
 
             for (int i = 1; i < 4; i++)
             {
-                Debug.Log(enemy[i]);
+                //Debug.Log(enemy[i]);
                 enemy[i].EnemyMove();
             }
         }

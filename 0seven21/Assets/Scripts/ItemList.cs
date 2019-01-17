@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ItemList : MonoBehaviour {
 
     private string[] ilist = new string[10];
+    public static string[] ilist_c = new string[10];
 
     public Button[] blist = new Button[10];
     public Text[] tlist = new Text[10];
@@ -14,10 +15,26 @@ public class ItemList : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        for (int i = 0; i < ilist.Length; i++)
+        if (SceneLord.score == 2)
         {
-            ilist[i] = "";
-            tlist[i].GetComponent<Text>().text = "";
+            for (int i = 0; i < ilist.Length; i++)
+            {
+                ilist[i] = "";
+                ilist_c[i] = "";
+                tlist[i].GetComponent<Text>().text = "";
+            }
+        }
+
+        for (int i = 0; i < 10; i++)
+        {
+            ilist[i] = ilist_c[i];
+            blist[i].gameObject.SetActive(true);
+            tlist[i].GetComponent<Text>().text = ilist_c[i];
+
+            if (ilist[i] == "")
+            {
+                blist[i].gameObject.SetActive(false);
+            }
         }
     }
     public void SetIlist(string item_name)
@@ -34,6 +51,8 @@ public class ItemList : MonoBehaviour {
 
         blist[item_i].gameObject.SetActive(true);
         tlist[item_i].GetComponent<Text>().text = ilist[item_i];
+
+        Reloadlist();
     }
     public string UnsetIlist()
     {
@@ -56,7 +75,26 @@ public class ItemList : MonoBehaviour {
             }
 
         }
+        Reloadlist();
         return ilist[0];
+    }
+
+    public void Reloadlist()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            ilist_c[i] = ilist[i];
+        }
+
+        //for (int i = 0; i > 10; i++)
+        //{
+        //    if (ilist_c[1] != "")
+        //    {
+        //        blist[i].gameObject.SetActive(true);
+        //        tlist[i].GetComponent<Text>().text = ilist_c[i];
+        //    }
+        //}
+
     }
 
 }
