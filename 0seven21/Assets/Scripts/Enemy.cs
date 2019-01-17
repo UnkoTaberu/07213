@@ -54,7 +54,7 @@ public class Enemy : MonoBehaviour
             for (int yy = (int)e_tmp.y - 1; (int)e_tmp.y + 2 != yy; yy++)
             {
 
-                Debug.Log(xx + "  " + yy);
+                //Debug.Log(xx + "  " + yy);
                 //壁じゃない　かつ　自身の位置　ではない
                 if (scontroller.map[xx, yy] != 0 && scontroller.map[xx, yy] != scontroller.map[(int)e_tmp.x, (int)e_tmp.y])
                 {
@@ -77,7 +77,7 @@ public class Enemy : MonoBehaviour
 
 
 
-        Debug.Log("結果 " + max_x + "  " + max_y);
+        //Debug.Log("結果 " + max_x + "  " + max_y);
         if (scontroller.map[max_x, max_y] != 4)
         {
             e_tmp.x = max_x;
