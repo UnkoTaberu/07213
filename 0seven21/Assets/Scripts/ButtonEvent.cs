@@ -27,9 +27,6 @@ public class ButtonEvent : MonoBehaviour
     // キャンセルボタン用
     public int canselBtn = 0;
 
-
-
-
     void Start()
     {
         canvasGroup = GetComponentInParent<CanvasGroup>();
@@ -122,11 +119,9 @@ public class ButtonEvent : MonoBehaviour
         //{
 
         //}
-        Debug.Log("びんびいん");
-        Debug.Log(itext.text);
+
         if (itext.text == "煙草")
         {
-            Debug.Log("びんびいん");
 
             hbc.HpRecovery();
         }
