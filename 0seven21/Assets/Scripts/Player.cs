@@ -16,6 +16,11 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject propertyWindow;
 
+    [SerializeField]
+    Enemy[] enemy;
+    //[SerializeField]
+    //Enemy enemy;
+
     // 長押しフレーム数
     private int presskeyFrames = 0;
     // 長押し判定の閾値（フレーム数）
@@ -46,6 +51,15 @@ public class Player : MonoBehaviour
     void Start()
     {
         anim = GetComponent("Animator") as Animator;
+
+        var enemytile = GameObject.Find("EnemyTileContainer").GetComponentsInChildren<Transform>();
+        int i = 0;
+        foreach (Transform child in enemytile)
+        {
+
+            enemy[i] = child.gameObject.GetComponent<Enemy>();
+            i++;
+        }
     }
 
     void Update()
@@ -175,11 +189,18 @@ public class Player : MonoBehaviour
         Vector3 tmp = GameObject.Find("Player").transform.position;
         x = (int)tmp.x;
         y = (int)tmp.y;
-        if (scontroller.map[x + x2, y + y2] != 0)
+        if (scontroller.map[x + x2, y + y2] != 0 && scontroller.map[x + x2, y + y2] != 8)
         {
             PlayerWas(scontroller.map);
+            //enemy.EnemyWas(scontroller.map);
             transform.Translate(x2, y2, z2);
             PlayerNow(scontroller.map);
+
+            for (int i = 1; i < 4; i++)
+            {
+                Debug.Log(enemy[i]);
+                enemy[i].EnemyMove();
+            }
         }
     }
 

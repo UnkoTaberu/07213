@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RandomGenerator : MonoBehaviour {
+public class RandomGenerator : MonoBehaviour
+{
 
     [SerializeField]
     DungeonGenerator generator;
@@ -22,7 +23,7 @@ public class RandomGenerator : MonoBehaviour {
     public int[,] spmap;
     [Range(0, 20)]
     public int sp_capacity = 3;
-    
+
 
     public void SpGenerate(int[,] map)
     {
@@ -55,7 +56,8 @@ public class RandomGenerator : MonoBehaviour {
 
                 i++;
 
-            }else if(i == sp_capacity) //階段を配置
+            }
+            else if (i == sp_capacity) //階段を配置
             {
                 if (spmap[x = rx.Next(generator.width), y = ry.Next(generator.height)] == 1)
                 {
@@ -63,6 +65,7 @@ public class RandomGenerator : MonoBehaviour {
                     var tile = Instantiate(Train.ItemTrain[10]);
                     tile.transform.SetParent(StepstileContainer);
                     tile.transform.localPosition = new Vector2(x, y);
+
 
                     i++;
                 }
@@ -81,19 +84,21 @@ public class RandomGenerator : MonoBehaviour {
 
         while (i != 3)
         {
-            if (map[x = rx.Next(generator.width), y = ry.Next(generator.height)] == 1) // 敵を配置
+            if (map[x = rx.Next(generator.width), y = ry.Next(generator.height)] == 1) // アイテムを配置
             {
                 map[x, y] = 8;
                 var tile = Instantiate(Train.EnemyTrain[rx.Next(Train.EnemyTrain.Length)]);
                 tile.transform.SetParent(EnemytileContainer);
                 tile.transform.localPosition = new Vector2(x, y);
-
+                tile.AddComponent<Enemy>();
 
                 i++;
             }
         }
 
     }
+
+
 
     //public void StepsGenerate(int[,] map)
     //{
