@@ -58,6 +58,7 @@ public class HpBarCtrl : MonoBehaviour
         }
         else
         {
+            SceneLord.score = 1;
             SceneManager.LoadScene("GameOver");
         }
         //    _hp -= 1;
@@ -88,7 +89,6 @@ public class HpBarCtrl : MonoBehaviour
 
         // HPゲージに値を設定
         _slider.value = _hp;
-        Debug.Log("ちくび");
     }
 
 }
