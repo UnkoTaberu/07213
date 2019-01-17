@@ -480,6 +480,7 @@ GameObject:
   - component: {fileID: 456423895}
   - component: {fileID: 456423894}
   - component: {fileID: 456423893}
+  - component: {fileID: 456423897}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -549,6 +550,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &456423897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 456423892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92662b4b3fa6a134db184617d7916b15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonComponent: {fileID: 349497562}
 --- !u!1 &804222353
 GameObject:
   m_ObjectHideFlags: 0
@@ -928,7 +941,6 @@ GameObject:
   - component: {fileID: 1661405443}
   - component: {fileID: 1661405445}
   - component: {fileID: 1661405444}
-  - component: {fileID: 1661405446}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -987,15 +999,3 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1661405442}
---- !u!114 &1661405446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1661405442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92662b4b3fa6a134db184617d7916b15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonComponent: {fileID: 349497562}
