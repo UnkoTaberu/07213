@@ -45,7 +45,7 @@ public class SceneLord : MonoBehaviour {
             if (Time.time - startTime > 1f)
             {
                 score = 1;
-                SceneManager.LoadScene("Game_Title");
+                SceneManager.LoadScene("Game_End");
             }
 
         }
