@@ -58,7 +58,7 @@ public class HpBarCtrl : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("Game_End");
+            SceneManager.LoadScene("GameOver");
         }
         //    _hp -= 1;
 
