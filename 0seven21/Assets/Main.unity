@@ -1257,7 +1257,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 285270318}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -320, y: 240, z: 0}
+  m_LocalPosition: {x: -512, y: 384, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1219799304}
@@ -1833,7 +1833,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 369786607}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 320, y: 240, z: 0}
+  m_LocalPosition: {x: 512, y: 384, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1415017335}
@@ -2291,16 +2291,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemTrain:
-  - {fileID: 1979275143128380, guid: ba562da79ef6ccb4d8a05fc74350f86e, type: 2}
-  - {fileID: 1319247474243618, guid: 1e3d084fd252b5e4ba23e715fe785511, type: 2}
   - {fileID: 1569900259876068, guid: 2d6b7e6abb1ecaa43acf3d6344ab164a, type: 2}
-  - {fileID: 1284626362159452, guid: 96fd9d911acb2c64888d79c9b4c01089, type: 2}
-  - {fileID: 1661445447594736, guid: 1382e27d02477e742a1102df56d6afbb, type: 2}
-  - {fileID: 1063668308284330, guid: ca576e2bc07018a4c953a477f5caafcc, type: 2}
-  - {fileID: 1388687539286816, guid: 40858dce54a1758429392e918f1ce306, type: 2}
-  - {fileID: 1129563364758450, guid: 18be5b9cd8166c54cb80a56d6f3df466, type: 2}
-  - {fileID: 1052201102094056, guid: 4dcbf05b96b230944b3be25df57b7d00, type: 2}
-  - {fileID: 1508510388199012, guid: 8d7b9e32a10a7e14baa1090421bf0339, type: 2}
+  - {fileID: 1569900259876068, guid: 2d6b7e6abb1ecaa43acf3d6344ab164a, type: 2}
+  - {fileID: 1569900259876068, guid: 2d6b7e6abb1ecaa43acf3d6344ab164a, type: 2}
+  - {fileID: 1569900259876068, guid: 2d6b7e6abb1ecaa43acf3d6344ab164a, type: 2}
+  - {fileID: 1569900259876068, guid: 2d6b7e6abb1ecaa43acf3d6344ab164a, type: 2}
+  - {fileID: 1569900259876068, guid: 2d6b7e6abb1ecaa43acf3d6344ab164a, type: 2}
+  - {fileID: 1569900259876068, guid: 2d6b7e6abb1ecaa43acf3d6344ab164a, type: 2}
+  - {fileID: 1569900259876068, guid: 2d6b7e6abb1ecaa43acf3d6344ab164a, type: 2}
+  - {fileID: 1569900259876068, guid: 2d6b7e6abb1ecaa43acf3d6344ab164a, type: 2}
+  - {fileID: 1569900259876068, guid: 2d6b7e6abb1ecaa43acf3d6344ab164a, type: 2}
   - {fileID: 1348357103011450, guid: 2b407155713b61d468811475abf43d4b, type: 2}
   EnemyTrain:
   - {fileID: 1840527766530874, guid: 5989bade5d1c5564aa475fbc5137f225, type: 2}
@@ -4829,7 +4829,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1097034219}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 320, y: 240, z: 0}
+  m_LocalPosition: {x: 512, y: 384, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 285270319}
