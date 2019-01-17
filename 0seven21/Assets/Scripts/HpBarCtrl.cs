@@ -10,7 +10,7 @@ public class HpBarCtrl : MonoBehaviour
     Slider _slider;
     public Image sliderImage;
 
-    int _hp = 1000;
+    public static int _hp = 1000;
 
 
     void Start()
@@ -77,7 +77,7 @@ public class HpBarCtrl : MonoBehaviour
     }
     public void HpRecovery()
     {
-        _hp = 1000;
+        _hp = _hp + 250;
 
         // HPゲージに値を設定
         _slider.value = _hp;
@@ -85,7 +85,7 @@ public class HpBarCtrl : MonoBehaviour
     }
     public void HpDamage()
     {
-        _hp = _hp - 500;
+        _hp = _hp - 250;
 
         // HPゲージに値を設定
         _slider.value = _hp;

@@ -56,35 +56,32 @@ public class Enemy : MonoBehaviour
         enemy_num = 0;
         max_x = 0;
         max_y = 0;
-        int count = 1;
 
         //移動できるか
         for (int xx = (int)e_tmp.x - 1; (int)e_tmp.x + 2 != xx; xx++)
         {
             for (int yy = (int)e_tmp.y - 1; (int)e_tmp.y + 2 != yy; yy++)
             {
-                if (count % 2 == 0)
+
+                //Debug.Log(xx + "  " + yy);
+                //壁じゃない　かつ　自身の位置　ではない
+                if (scontroller.map[xx, yy] != 0 && scontroller.map[xx, yy] != scontroller.map[(int)e_tmp.x, (int)e_tmp.y])
                 {
-                    //Debug.Log(xx + "  " + yy);
-                    //壁じゃない　かつ　自身の位置　ではない
-                    if (scontroller.map[xx, yy] != 0 && scontroller.map[xx, yy] != scontroller.map[(int)e_tmp.x, (int)e_tmp.y])
+
+                    //コスト計算
+                    enemy_cost[enemy_num] = Math.Abs(xx - (int)player_tmp.x) + Math.Abs(yy - (int)player_tmp.y);
+
+                    //一番低いコストを保持
+                    if (cost_max > enemy_cost[enemy_num])
                     {
+                        cost_max = enemy_cost[enemy_num];
 
-                        //コスト計算
-                        enemy_cost[enemy_num] = Math.Abs(xx - (int)player_tmp.x) + Math.Abs(yy - (int)player_tmp.y);
-
-                        //一番低いコストを保持
-                        if (cost_max > enemy_cost[enemy_num])
-                        {
-                            cost_max = enemy_cost[enemy_num];
-
-                            max_x = xx;
-                            max_y = yy;
-                        }
-                        enemy_num++;
+                        max_x = xx;
+                        max_y = yy;
                     }
+                    enemy_num++;
                 }
-                count++;
+
             }
         }
 

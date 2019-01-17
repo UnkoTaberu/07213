@@ -22,7 +22,8 @@ public class SceneLord : MonoBehaviour {
 
         this.text = this.GetComponent<Text>();
         this.text.text = score + "F";
-        score++;    
+        score++;
+        HpBarCtrl._hp = 1000;
 
     }
 	
