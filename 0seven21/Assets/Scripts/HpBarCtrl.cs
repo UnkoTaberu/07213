@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class HpBarCtrl : MonoBehaviour
 {
 
-
+    private AudioSource sound01;
     Slider _slider;
     public Image sliderImage;
 
@@ -18,6 +18,7 @@ public class HpBarCtrl : MonoBehaviour
         // スライダーを取得する
         _slider = this.GetComponent<Slider>();
         _slider.value = _hp;
+        sound01 = GetComponent<AudioSource>();
     }
 
 
@@ -89,6 +90,7 @@ public class HpBarCtrl : MonoBehaviour
 
         // HPゲージに値を設定
         _slider.value = _hp;
+        sound01.PlayOneShot(sound01.clip);
     }
 
 }
