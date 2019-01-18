@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class Enemy : MonoBehaviour
@@ -9,6 +10,8 @@ public class Enemy : MonoBehaviour
 
     [SerializeField]
     SceneController scontroller;
+    [SerializeField]
+    HpBarCtrl hbc;
 
     Transform mytransform;
 
@@ -37,6 +40,10 @@ public class Enemy : MonoBehaviour
         mytransform = this.transform;
         GameObject sc = GameObject.Find("SceneController");
         scontroller = sc.gameObject.GetComponent<SceneController>();
+
+        Slider slider = GameObject.Find("Slider").GetComponent<Slider>();
+        hbc = slider.gameObject.GetComponent<HpBarCtrl>();
+
     }
 
     // Update is called once per frame
@@ -128,13 +135,17 @@ public class Enemy : MonoBehaviour
                         {
 
                             Debug.Log("結果 " + max_x + "  " + max_y);
-                            if (scontroller.map[xxx, yyy] != 4)
+                            if (scontroller.map[xxx, yyy] != 4 && scontroller.map[xxx, yyy] != 8)
                             {
                                 e_tmp.x = xxx;
                                 e_tmp.y = yyy;
                                 EnemyWas(scontroller.map);
                                 mytransform.position = e_tmp;
                                 EnemyNow(scontroller.map);
+                            }
+                            else
+                            {
+                                hbc.HpDamage();
                             }
 
                         }
@@ -150,13 +161,17 @@ public class Enemy : MonoBehaviour
                         {
 
                             Debug.Log("結果 " + max_x + "  " + max_y);
-                            if (scontroller.map[count_x[0], count_y[0]] != 4)
+                            if (scontroller.map[count_x[0], count_y[0]] != 4 && scontroller.map[count_x[0], count_y[0]] != 8)
                             {
                                 e_tmp.x = count_x[0];
                                 e_tmp.y = count_y[0];
                                 EnemyWas(scontroller.map);
                                 mytransform.position = e_tmp;
                                 EnemyNow(scontroller.map);
+                            }
+                            else
+                            {
+                                hbc.HpDamage();
                             }
                         }
                         else if (scontroller.map[xxx, yyy] != 0)
@@ -169,6 +184,10 @@ public class Enemy : MonoBehaviour
                                 EnemyWas(scontroller.map);
                                 mytransform.position = e_tmp;
                                 EnemyNow(scontroller.map);
+                            }
+                            else
+                            {
+                                hbc.HpDamage();
                             }
                         }
                     }
@@ -193,13 +212,17 @@ public class Enemy : MonoBehaviour
                         {
 
                             Debug.Log("結果 " + max_x + "  " + max_y);
-                            if (scontroller.map[xxx, yyy] != 4)
+                            if (scontroller.map[xxx, yyy] != 4 && scontroller.map[xxx, yyy] != 8)
                             {
                                 e_tmp.x = xxx;
                                 e_tmp.y = yyy;
                                 EnemyWas(scontroller.map);
                                 mytransform.position = e_tmp;
                                 EnemyNow(scontroller.map);
+                            }
+                            else
+                            {
+                                hbc.HpDamage();
                             }
                         }
                     }
@@ -215,13 +238,17 @@ public class Enemy : MonoBehaviour
                         {
 
                             Debug.Log("結果 " + max_x + "  " + max_y);
-                            if (scontroller.map[count_x[1], count_y[1]] != 4)
+                            if (scontroller.map[count_x[1], count_y[1]] != 4 && scontroller.map[count_x[1], count_y[1]] != 8)
                             {
                                 e_tmp.x = count_x[1];
                                 e_tmp.y = count_y[1];
                                 EnemyWas(scontroller.map);
                                 mytransform.position = e_tmp;
                                 EnemyNow(scontroller.map);
+                            }
+                            else
+                            {
+                                hbc.HpDamage();
                             }
                         }
                         else if (scontroller.map[xxx, yyy] != 0)
@@ -234,6 +261,10 @@ public class Enemy : MonoBehaviour
                                 EnemyWas(scontroller.map);
                                 mytransform.position = e_tmp;
                                 EnemyNow(scontroller.map);
+                            }
+                            else
+                            {
+                                hbc.HpDamage();
                             }
                         }
                     }
@@ -261,13 +292,17 @@ public class Enemy : MonoBehaviour
                         {
 
                             Debug.Log("結果 " + max_x + "  " + max_y);
-                            if (scontroller.map[xxx, yyy] != 4)
+                            if (scontroller.map[xxx, yyy] != 4 && scontroller.map[xxx, yyy] != 8)
                             {
                                 e_tmp.x = xxx;
                                 e_tmp.y = yyy;
                                 EnemyWas(scontroller.map);
                                 mytransform.position = e_tmp;
                                 EnemyNow(scontroller.map);
+                            }
+                            else
+                            {
+                                hbc.HpDamage();
                             }
                         }
                     }
@@ -282,13 +317,17 @@ public class Enemy : MonoBehaviour
                         {
 
                             Debug.Log("結果 " + max_x + "  " + max_y);
-                            if (scontroller.map[count_x[0], count_y[0]] != 4)
+                            if (scontroller.map[count_x[0], count_y[0]] != 4 && scontroller.map[count_x[0], count_y[0]] != 8)
                             {
                                 e_tmp.x = count_x[0];
                                 e_tmp.y = count_y[0];
                                 EnemyWas(scontroller.map);
                                 mytransform.position = e_tmp;
                                 EnemyNow(scontroller.map);
+                            }
+                            else
+                            {
+                                hbc.HpDamage();
                             }
                         }
                         else if (scontroller.map[xxx, yyy] != 0)
@@ -301,6 +340,10 @@ public class Enemy : MonoBehaviour
                                 EnemyWas(scontroller.map);
                                 mytransform.position = e_tmp;
                                 EnemyNow(scontroller.map);
+                            }
+                            else
+                            {
+                                hbc.HpDamage();
                             }
                         }
                     }
@@ -326,13 +369,17 @@ public class Enemy : MonoBehaviour
                         {
 
                             Debug.Log("結果 " + max_x + "  " + max_y);
-                            if (scontroller.map[xxx, yyy] != 4)
+                            if (scontroller.map[xxx, yyy] != 4 && scontroller.map[xxx, yyy] != 8)
                             {
                                 e_tmp.x = xxx;
                                 e_tmp.y = yyy;
                                 EnemyWas(scontroller.map);
                                 mytransform.position = e_tmp;
                                 EnemyNow(scontroller.map);
+                            }
+                            else
+                            {
+                                hbc.HpDamage();
                             }
                         }
                     }
@@ -347,13 +394,17 @@ public class Enemy : MonoBehaviour
                         {
 
                             Debug.Log("結果 " + max_x + "  " + max_y);
-                            if (scontroller.map[count_x[2], count_y[2]] != 4)
+                            if (scontroller.map[count_x[2], count_y[2]] != 4 && scontroller.map[count_x[2], count_y[2]] != 8)
                             {
                                 e_tmp.x = count_x[2];
                                 e_tmp.y = count_y[2];
                                 EnemyWas(scontroller.map);
                                 mytransform.position = e_tmp;
                                 EnemyNow(scontroller.map);
+                            }
+                            else
+                            {
+                                hbc.HpDamage();
                             }
                         }
                         else if (scontroller.map[xxx, yyy] != 0)
@@ -366,6 +417,10 @@ public class Enemy : MonoBehaviour
                                 EnemyWas(scontroller.map);
                                 mytransform.position = e_tmp;
                                 EnemyNow(scontroller.map);
+                            }
+                            else
+                            {
+                                hbc.HpDamage();
                             }
                         }
                     }
@@ -382,6 +437,10 @@ public class Enemy : MonoBehaviour
                 EnemyWas(scontroller.map);
                 mytransform.position = e_tmp;
                 EnemyNow(scontroller.map);
+            }
+            else
+            {
+                hbc.HpDamage();
             }
         }
 
